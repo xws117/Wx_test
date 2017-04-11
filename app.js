@@ -27,6 +27,5 @@ App({
   globalData:{
     userInfo:null,
     xxxx: 0,
-    markers:5
   }
 })

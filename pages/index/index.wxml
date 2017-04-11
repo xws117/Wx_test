@@ -3,15 +3,17 @@
          style="width: 150px; height: 150px; background-color: #000000;"
          mode = "aspectFit"
   ></image>
-  <button size="mini" >like</button>
+  <button size="mini" >{{long}}</button>
   <button size="mini">more</button>
+  <text>{{markers}}</text>
+  <text>{{markers2}}</text>
 </view>
   <map id="map" 
   
   scale="14" 
   controls="{{controls}}" 
   bindcontroltap="controltap" 
-  markers="{{markers}}" 
+  markers="{{markers2}}" 
   bindmarkertap="marktapControl" 
   polyline="{{polyline}}" 
   bindregionchange="regionchange" 
