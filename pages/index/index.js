@@ -8,17 +8,17 @@ Page({
     username: '123\n',
     userInfo: {},
     xxxx: 0,
-    lang:0,
-    long:0,
+    lang: 0,
+    long: 0,
     markers2: [{
       id: "0",
-      latitude: 39.9259240516,
-      longitude: "116.4530430606",
+      latitude: '39.90403',
+      longitude: "116.407526",
       iconPath: "/pic/location.png"
     }, {
       id: "1",
       latitude: "39.9259240516",
-      longitude: "116.4608250000",
+      longitude: "116.4630430606",
       iconPath: "/pic/location.png"
     }, {
       id: "2",
@@ -31,9 +31,10 @@ Page({
       longitude: "116.4730430606",
       iconPath: "/pic/location.png"
     }],
-    markers:{}
-
+    markers:[],
+    
   },
+  
   onLoad: function (options) {
     this.setData({
       xxxx: 5
@@ -50,21 +51,21 @@ Page({
         console.log(res)
         var ll = res.longitude
         var la = res.latitude
-        var a = { id: "0", latitude: la + 0.1, longitude: ll, iconPath: "/pic/location.png" }
+        var a = { id: "0", latitude: la+0.1, longitude: ll, iconPath: "/pic/location.png",width:45,height:45 }
         marker[0] = a
-        var a = { id: "1", latitude: la - 0.1, longitude: ll, iconPath: "/pic/location.png" }
+        
+        var a = { id: "1", latitude: la - 0.1, longitude: ll, iconPath: "/pic/location.png",width:45,height:45 }
         marker[1] = a
-        var a = { id: "2", latitude: la, longitude: ll + 0.1, iconPath: "/pic/location.png" }
+        var a = { id: "2", latitude: la, longitude: ll + 0.1, iconPath: "/pic/location.png" ,width:45,height:45}
         marker[2] = a
-        var a = { id: "3", latitude: la, longitude: ll - 0.1, iconPath: "/pic/location.png" }
+        var a = { id: "3", latitude: la, longitude: ll - 0.1, iconPath: "/pic/location.png" ,width:45,height:45}
         marker[3] = a
         that.setData({
           long:res.longitude,
           lang:res.latitude,
           markers:marker
         })
-        console.log(marker)
-        console.log(that.markers2)
+        //console.log(marker)
 
       },
       fail: function (res) {
@@ -74,10 +75,7 @@ Page({
         // complete
       }
     })
-    /*console.log(marker)
-    this.setData({
-      markers:{marker}
-    })*/
+
 
   },
   marktapControl(e) {
